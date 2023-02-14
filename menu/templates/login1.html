@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content-section">
+        {% load crispy_forms_tags %}  
+        <div class="container ">
+            <form method="POST">
+                {% csrf_token %} 
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">JOIN Today</legend>
+                {{ form|crispy }}      
+                </fieldset>
+                <div class="form-group">
+                   <button class="mt-4 btn btn-outline-info" type="submit">Log in</button>
+                   <button class="mt-4 btn btn-outline-info" type="submit"><a href="">Forget Password</a></button>
+                   </div>
+            </form>
+            <div class="border-top pt-3">
+                <small class="text-muted">
+            If you don't have any account, first <a  class="ml-2" href="{%url 'registers' %}">Register</a> 
+            </small>
+        </div>
+</body>
+</html>
